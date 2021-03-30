@@ -1,15 +1,15 @@
-pipeline{
+pipeline {
     agent any
-
+    tools{nodejs "node"}
     stages {
-        stage ('stage 1') {
+        stage('Hello') {
             steps {
-                echo 'Stage 1'
+                echo 'helloooooo'
             }
         }
-        stage ('stage 2') {
+        stage('run script') {
             steps {
-                echo 'Stage 2'
+                bat 'node greet.js'
             }
         }
     }
